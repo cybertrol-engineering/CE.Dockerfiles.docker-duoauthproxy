@@ -22,6 +22,12 @@ docker run -d -p 1812:1812/udp \
 This generates a generic configuration based on the parameters you specified. 
 
 ```text
+[main]
+debug=false
+log_auth_events=true
+log_sso_events=true
+log_stdout=true
+
 [ad_client]
 host=domain.com
 service_account_username=DuoUser
@@ -124,3 +130,10 @@ spec:
           configMap:
             name: duo-auth-proxy-configmap
 ```
+
+## Changelog
+
+### 0.0.1 
+
+- Added 'main' section and logging to standard out.
+

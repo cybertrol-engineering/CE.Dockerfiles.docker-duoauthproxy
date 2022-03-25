@@ -14,6 +14,9 @@ RUN \
     cp -r ./duoauthproxy-build /duoauthproxy-build
 
 FROM debian:bullseye-slim
+
+ENV DEBUG=false
+
 WORKDIR /
 COPY --from=builder /duoauthproxy-build /duoauthproxy-build
 COPY entrypoint.sh /entrypoint.sh

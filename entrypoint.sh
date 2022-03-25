@@ -25,7 +25,9 @@ done
 NL=$'\n'
 if [ $CONFIG_GEN -eq 1 ]
 then
-  echo "[ad_client]${NL}host=${DUO_AD_HOST}${NL}service_account_username=${DUO_AD_USER}${NL}service_account_password=${DUO_AD_PASSWORD}${NL}search_dn=${DUO_AD_SEARCH_DN}${NL}${NL}[radius_server_auto]${NL}ikey=${DUO_INTEGRATION_KEY}${NL}skey=${DUO_SECRET_KEY}${NL}api_host=${DUO_API_HOSTNAME}${NL}radius_ip_1=0.0.0.0/0${NL}radius_secret_1=${DUO_RADIUS_SECRET}${NL}failmode=${DUO_FAILMODE}${NL}client=ad_client${NL}port=${DUO_PORT}" > /opt/duoauthproxy/conf/authproxy.cfg;
+  echo "[main]${NL}debug=${DEBUG}${NL}log_auth_events=true${NL}log_sso_events=true${NL}log_stdout=true${NL}" > /opt/duoauthproxy/conf/authproxy.cfg;
+  echo "${NL}[ad_client]${NL}host=${DUO_AD_HOST}${NL}service_account_username=${DUO_AD_USER}${NL}service_account_password=${DUO_AD_PASSWORD}${NL}search_dn=${DUO_AD_SEARCH_DN}${NL}${NL}" > /opt/duoauthproxy/conf/authproxy.cfg;
+  echo "${NL}[radius_server_auto]${NL}ikey=${DUO_INTEGRATION_KEY}${NL}skey=${DUO_SECRET_KEY}${NL}api_host=${DUO_API_HOSTNAME}${NL}radius_ip_1=0.0.0.0/0${NL}radius_secret_1=${DUO_RADIUS_SECRET}${NL}failmode=${DUO_FAILMODE}${NL}client=ad_client${NL}port=${DUO_PORT}" > /opt/duoauthproxy/conf/authproxy.cfg;
 fi
 
 # default behaviour is to launch authproxy
