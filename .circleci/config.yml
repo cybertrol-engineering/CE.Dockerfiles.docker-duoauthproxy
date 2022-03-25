@@ -6,8 +6,7 @@ workflows:
     jobs:
       - docker/publish:
           image: alphabet5/duoauthproxy
-#          update-description: true
-#          tag: latest
+          tag: latest
   weekly:
     triggers: #use the triggers key to indicate a scheduled build
       - schedule:
